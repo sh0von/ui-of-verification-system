@@ -9,9 +9,6 @@
 		Button,
 		Footer,
 		FooterBrand,
-		FooterLinkGroup,
-		FooterLink,
-		FooterCopyright
 	} from 'flowbite-svelte';
 </script>
 
