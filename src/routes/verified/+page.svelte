@@ -1,27 +1,33 @@
 <script>
     import { Card, Input, Label, Button } from "flowbite-svelte";
+    import { selectedProduct } from '../../lib/stores';
+
 </script>
 
 <div class="flex flex-col p-8 items-center justify-center min-h-screen bg-gray-100">
     <div class="max-w-md w-full bg-white shadow-md rounded-lg overflow-hidden">
         <div class="p-6">
             <h2 class="text-2xl font-semibold mb-4">Product Details</h2>
-            <div class="mb-4">
-                <Label>Product Name</Label>
-                <p class="text-gray-700">XYZ</p>
-            </div>
-            <div class="mb-4">
-                <Label>Serial Number</Label>
-                <p class="text-gray-700">ABC123</p>
-            </div>
-            <div class="mb-4">
-                <Label>Manufacturing Date</Label>
-                <p class="text-gray-700">January 1, 2023</p>
-            </div>
-            <div class="mb-4">
-                <Label>Verified</Label>
-                <p class="text-green-500 font-semibold">Yes</p>
-            </div>
+            {#if $selectedProduct}
+                <div class="mb-4">
+                    <Label>Product Name</Label>
+                    <p class="text-gray-700">{ $selectedProduct.name }</p>
+                </div>
+                <div class="mb-4">
+                    <Label>Serial Number</Label>
+                    <p class="text-gray-700">{ $selectedProduct.serialNumber }</p>
+                </div>
+                <div class="mb-4">
+                    <Label>Manufacturing Date</Label>
+                    <p class="text-gray-700">{ $selectedProduct.manufacturingDate }</p>
+                </div>
+                <div class="mb-4">
+                    <Label>Verified</Label>
+                    <p class="text-green-500 font-semibold">Yes</p>
+                </div>
+            {:else}
+                <p>No product details available.</p>
+            {/if}
         </div>
         <div class="p-6 bg-gray-200">
             <div class="flex items-center mb-4">

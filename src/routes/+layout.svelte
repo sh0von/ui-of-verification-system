@@ -10,6 +10,28 @@
 		Footer,
 		FooterBrand,
 	} from 'flowbite-svelte';
+
+	let products = [
+        {
+            name: 'Product 1',
+            serialNumber: 'ABC123',
+            manufacturingDate: 'January 1, 2023',
+            verified: true,
+        },
+        {
+            name: 'Product 2',
+            serialNumber: 'DEF456',
+            manufacturingDate: 'February 15, 2023',
+            verified: false,
+        },
+		{
+			name: 'Product 3',
+			serialNumber: 'GHI789',
+			manufacturingDate: 'March 30, 2023',
+			verified: true,
+		},
+    ];
+
 </script>
 
 <Navbar class="bg-gray-0 border-b border-gray-600">
